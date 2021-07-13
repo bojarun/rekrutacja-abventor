@@ -1,0 +1,54 @@
+{
+  "title": "Language of therapy",
+  "subtitle": "Chose at least one language or more if you need multi-lingual therapist",
+  "fields": [
+    {
+      "question": "English"
+    },
+    {
+      "question": "Ukrainian"
+    },
+    {
+      "question": "Polish"
+    },
+    {
+      "question": "Portuguese"
+    },
+    {
+      "question": "Romanian"
+    },
+    {
+      "question": "Slovakian"
+    },
+    {
+      "question": "Spanish"
+    },
+    {
+      "question": "Czech"
+    },
+    {
+      "question": "Italian"
+    },
+    {
+      "question": "Chinese"
+    },
+    {
+      "question": "Russian"
+    },
+    {
+      "question": "Hindi"
+    },
+    {
+      "question": "German"
+    },
+    {
+      "question": "French"
+    },
+    {
+      "question": "Arabic"
+    },
+    {
+      "question": "Bengali"
+    }
+  ]
+}

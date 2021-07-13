@@ -1,0 +1,37 @@
+/**
+ * section: GRID
+ * ------------------------------------------------------------
+ */
+
+    $columns-number: 	    12;
+    $gutter-desktop:        $container-padding;
+    $gutter-mobile:         $container-padding;
+
+    @mixin column($gutter-size){
+        .row{
+            margin:         0 (-$gutter-size/2);
+        }
+        @for $i from 1 through $columns-number {
+            .col-#{$i} {
+                width:      calc(100%/#{$columns-number}*#{$i});
+                padding:    0 $gutter-size/2;
+            }
+        }
+    }
+
+    .row{
+        @include            d-flex();
+        -ms-flex-wrap:      wrap;
+        flex-wrap:          wrap;
+        .col{
+            display:        block;
+            position:       relative;
+        }
+    }
+
+    @media (min-width: 768px) {
+        @include            column($gutter-desktop);
+    }
+    @media (max-width: 767px) {
+        @include            column($gutter-mobile);
+    }

@@ -1,0 +1,15 @@
+{
+  "title": "How old are you?",
+  "subtitle": "If you are under 16 ask adult for a help.",
+  "fields": [
+    {
+      "question": "16 - 17"
+    },
+    {
+      "question": "18 - 59"
+    },
+    {
+      "question": "60+"
+    }
+  ]
+}

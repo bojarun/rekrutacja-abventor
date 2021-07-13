@@ -1,0 +1,136 @@
+.therapist{
+  display: block;
+  position: relative;
+  max-width:800px;
+  width: 100%;
+  padding: 40px;
+  margin-bottom: 100px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding:20px 20px 40px 20px;
+  }
+
+
+  &__header{
+    display: block;
+    position: relative;
+    @include clearfix();
+  }
+
+  &__avatar{
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    overflow: hidden;
+
+    img{
+      display: block;
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &__price{
+    display: block;
+    position: absolute;
+    right: 0;
+    top:0;
+    text-align: right;
+  }
+
+  &__info{
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom:0;
+    text-align: right;
+
+    h3,p{
+      font-size:18px;
+      line-height: 24px;
+    }
+
+    @media (max-width: 768px) {
+      display: block;
+      position: relative;
+      right: inherit;
+      bottom: inherit;
+      text-align: center;
+      margin-top:30px;
+    }
+  }
+
+  &__content{
+    display: flex;
+    position: relative;
+    text-align: left;
+    margin-top: 20px;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+  &__tags{
+    width: calc(100% - 200px);
+    padding-right: 100px;
+    border-right: solid 1px #f2f2f2;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+  &__session{
+    width: 200px;
+    padding-left:50px;
+
+    @media (max-width: 768px) {
+      padding-left: 0;
+      margin: 15px auto;
+    }
+
+
+    span{
+      display: block;
+      position: relative;
+      @include font(500,13px,28px);
+      margin: 5px 0;
+      padding-right: 50px;
+
+      background: url(path-to-assets("../images/icon-close-red.svg")) 100% 50% / 14px no-repeat;
+
+      &.active{
+        background: url(path-to-assets("../images/icon-dropdown.svg")) 100% 50% / 14px no-repeat;
+      }
+    }
+  }
+
+  &__footer{
+    small{
+      display: block;
+      position: relative;
+      max-width:500px;
+      width: 100%;
+      margin: 20px auto 0 auto;
+    }
+  }
+
+  .button{
+    text-transform: none;
+    position: absolute;
+    bottom:-45px;
+    left:50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
+    width: 200px;
+
+    @media (max-width: 768px){
+      bottom: -25px;
+    }
+  }
+}

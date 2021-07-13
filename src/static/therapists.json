@@ -1,0 +1,91 @@
+{
+  "doctor": [
+    {
+      "price": 40,
+      "name": "dr. Alexandra Stevens-Schlotterbeck",
+      "grade": "Psychologist, Consellor",
+      "video": 1,
+      "phone": 1,
+      "chat": 0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut scelerisque, quam nec tristique tempus, arcu lectus mollis est, nec laoreet augue nibh a ante",
+      "tags": [
+        {
+          "text": "Depression"
+        },
+        {
+          "text": "Depression"
+        },
+        {
+          "text": "Physical Addiction"
+        },
+        {
+          "text": "Physical Addiction"
+        },
+        {
+          "text": "Borderline personality"
+        },
+        {
+          "text": "Borderline personality"
+        }
+      ]
+    },
+    {
+      "price": 20,
+      "name": "dr. Monika Kowalska",
+      "grade": "Psychologist, Consellor",
+      "video": 1,
+      "phone": 1,
+      "chat": 0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut scelerisque, quam nec tristique tempus, arcu lectus mollis est, nec laoreet augue nibh a ante",
+      "tags": [
+        {
+          "text": "Depression"
+        },
+        {
+          "text": "Depression"
+        },
+        {
+          "text": "Physical Addiction"
+        },
+        {
+          "text": "Physical Addiction"
+        },
+        {
+          "text": "Borderline personality"
+        },
+        {
+          "text": "Borderline personality"
+        }
+      ]
+    },
+    {
+      "price": 80,
+      "name": "dr. Joanna Nowak",
+      "grade": "Psychologist, Consellor",
+      "video": 1,
+      "phone": 1,
+      "chat": 0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut scelerisque, quam nec tristique tempus, arcu lectus mollis est, nec laoreet augue nibh a ante",
+      "tags": [
+        {
+          "text": "Depression"
+        },
+        {
+          "text": "Depression"
+        },
+        {
+          "text": "Physical Addiction"
+        },
+        {
+          "text": "Physical Addiction"
+        },
+        {
+          "text": "Borderline personality"
+        },
+        {
+          "text": "Borderline personality"
+        }
+      ]
+    }
+  ]
+}

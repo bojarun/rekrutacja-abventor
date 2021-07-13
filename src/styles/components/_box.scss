@@ -1,0 +1,45 @@
+.box{
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 512px;
+  padding:40px 95px;
+  text-align: center;
+  background: white;
+  margin:50px auto 0 auto;
+  border-radius :4px;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
+
+  @media (max-width: 980px) {
+    max-width: 100%;
+    padding:40px 20px;
+
+    .button{
+      margin:10px 10px 0 10px;
+    }
+  }
+
+  &--footer{
+    margin-top:0;
+    padding:0;
+    background: transparent;
+    box-shadow: none;
+  }
+  &--wide{
+    max-width: 980px;
+    border:solid 2px #3EAFFB;
+  }
+
+  h2{
+    display: block;
+    position: relative;
+    @include font(700,18px,24px);
+    margin-bottom:25px;
+
+    small{
+      @include font(400,13px,24px);
+      display: block;
+      position: relative;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "title": "What is your gender?",
+  "subtitle": "",
+  "fields": [
+    {
+      "question": "Female"
+    },
+    {
+      "question": "Male"
+    },
+    {
+      "question": "Other"
+    }
+  ]
+}

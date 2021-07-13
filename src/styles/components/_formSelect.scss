@@ -1,0 +1,30 @@
+.formSelect{
+  display: block;
+  position: relative;
+  @include font(600,16px,28px);
+
+  width: 300px;
+
+  label{
+    display: inline-block;
+    position: relative;
+    margin-right:50px;
+  }
+  select{
+    display: inline-block;
+    position: relative;
+    padding: 10px 5px;
+    border-bottom: solid 1px #CCD6DB;
+    padding-right: 50px;
+  }
+
+  &__icon{
+    display: block;
+    position: absolute;
+    width:28px;
+    height:28px;
+    background: url(path-to-assets("../images/icon-dropdown.svg")) 50% 50% / 14px no-repeat;
+    right:0;
+    top:10px;
+  }
+}

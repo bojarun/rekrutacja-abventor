@@ -1,0 +1,289 @@
+    /**
+     * subsection: Mixins Display
+     * ----------------------------------------
+     */
+
+    @mixin b-rel{
+        display:    block;
+        position:   relative;
+    }
+    @mixin i-rel{
+        display:    inline-block;
+        position:   relative;
+    }
+    @mixin b-abs{
+        display:    block;
+        position:   absolute;
+    }
+    @mixin b-fix{
+        display:    block;
+        position:   fixed;
+    }
+    @mixin d-flex{
+        display:    -ms-flexbox;
+        display:    flex;
+        position:   relative;
+    }
+
+    /**
+     * subsection: Mixins Positions
+     * ----------------------------------------
+     */
+
+    @mixin center{
+        @include    b-abs();
+        top:        50%;
+        left:       50%;
+        transform:  translateY(-50%) translateX(-50%);
+    }
+    @mixin center-v{
+        @include    b-abs();
+        top:        50%;
+        transform:  translateY(-50%);
+    }
+    @mixin center-h{
+        @include    b-abs();
+        left:       50%;
+        transform:  translateX(-50%);
+    }
+
+    /**
+     * subsection: Mixins Misc
+     * ----------------------------------------
+     */
+
+    @mixin font($font-weight,$font-size,$line-height:normal){
+        font-weight:    $font-weight;
+        font-size:      $font-size;
+        line-height:    $line-height;
+    }
+
+    @mixin clearfix{
+        &:after {
+            display:    table;
+            clear:      both;
+            content:    '';
+        }
+    }
+
+    @mixin pseudo-element{
+        @include    b-abs();
+        content:    '';
+        z-index:    1;
+    }
+    @mixin overlay{
+        @include    b-abs();
+        top:        0;
+        left:       0;
+        width:      100%;
+        height:     100%;
+    }
+    @mixin overlay-fixed{
+        @include    b-fix();
+        top:        0;
+        left:       0;
+        width:      100%;
+        height:     100%;
+    }
+
+    @mixin optional-at-root($sel) {
+        @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+            @content;
+        }
+    }
+    @mixin placeholder {
+        @include optional-at-root('::-webkit-input-placeholder') {
+            @content;
+        }
+        @include optional-at-root(':-moz-placeholder') {
+            @content;
+        }
+        @include optional-at-root('::-moz-placeholder') {
+            @content;
+        }
+        @include optional-at-root(':-ms-input-placeholder') {
+            @content;
+        }
+    }
+
+    @mixin pointer-events-none{
+        pointer-events: none !important;
+        cursor:         default !important;
+    }
+
+    /**
+     * subsection: Mixins Shape
+     * ----------------------------------------
+     */
+
+    @mixin square($size){
+        width:          $size;
+        height:         $size;
+    }
+    @mixin circle($size){
+        @include        square($size);
+        border-radius:  100%;
+    }
+    @mixin oval($width, $height){
+        width:          $width;
+        height:         $height;
+        border-radius:  $height;
+    }
+    @mixin triangle($size, $color, $direction) {
+        $width: nth($size, 1);
+        $height: nth($size, length($size));
+        $foreground-color: nth($color, 1);
+        $background-color: if(length($color) == 2, nth($color, 2), transparent);
+        height: 0;
+        width: 0;
+        @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+            $width: $width / 2;
+            $height: if(length($size) > 1, $height, $height/2);
+
+            @if $direction == up {
+                border-bottom: $height solid $foreground-color;
+                border-left: $width solid $background-color;
+                border-right: $width solid $background-color;
+            } @else if $direction == right {
+                border-bottom: $width solid $background-color;
+                border-left: $height solid $foreground-color;
+                border-top: $width solid $background-color;
+            } @else if $direction == down {
+                border-left: $width solid $background-color;
+                border-right: $width solid $background-color;
+                border-top: $height solid $foreground-color;
+            } @else if $direction == left {
+                border-bottom: $width solid $background-color;
+                border-right: $height solid $foreground-color;
+                border-top: $width solid $background-color;
+            }
+        } @else if ($direction == up-right) or ($direction == up-left) {
+            border-top: $height solid $foreground-color;
+
+            @if $direction == up-right {
+                border-left:  $width solid $background-color;
+            } @else if $direction == up-left {
+                border-right: $width solid $background-color;
+            }
+        } @else if ($direction == down-right) or ($direction == down-left) {
+            border-bottom: $height solid $foreground-color;
+
+            @if $direction == down-right {
+                border-left:  $width solid $background-color;
+            } @else if $direction == down-left {
+                border-right: $width solid $background-color;
+            }
+        } @else if ($direction == inset-up) {
+            border-color: $background-color $background-color $foreground-color;
+            border-style: solid;
+            border-width: $height $width;
+        } @else if ($direction == inset-down) {
+            border-color: $foreground-color $background-color $background-color;
+            border-style: solid;
+            border-width: $height $width;
+        } @else if ($direction == inset-right) {
+            border-color: $background-color $background-color $background-color $foreground-color;
+            border-style: solid;
+            border-width: $width $height;
+        } @else if ($direction == inset-left) {
+            border-color: $background-color $foreground-color $background-color $background-color;
+            border-style: solid;
+            border-width: $width $height;
+        }
+    }
+
+    /**
+     * subsection: Mixin Responsive Web Design
+     * ----------------------------------------
+     *
+     * how to use:
+     * .header {
+     *      @include breakpoint(sm) {
+     *          width: 50%;
+     *      }
+     *      @include breakpoint($min:600 $max:1200) {
+     *          height: auto;
+     *      }
+     * }
+     */
+
+    @mixin breakpoint($min: 0, $max: 0) {
+        $type: type-of($min);
+
+        @if $type == string {
+            $class: $min;
+
+            @if $class == xs {
+                @media (max-width: 767px) { @content; }
+            }
+
+            @else if $class == sm {
+                @media (min-width: 768px) { @content; }
+            }
+
+            @else if $class == md {
+                @media (min-width: 992px) { @content; }
+            }
+
+            @else if $class == lg {
+                @media (min-width: 1200px) { @content; }
+            }
+
+            @else if $class == sm-below {
+                @media (max-width: 991px) { @content; }
+            }
+
+            @else if $class == md-below {
+                @media (max-width: 1199px) { @content; }
+            }
+
+            @else if $class == sm-only {
+                @media (min-width: 768px) and (max-width: 991px) { @content; }
+            }
+
+            @else if $class == md-only {
+                @media (min-width: 992px) and (max-width: 1199px) { @content; }
+            }
+
+            @else {
+                @warn "Breakpoint {{[[-mixin-]]}} supports: xs, sm, md, lg, sm-below, sm-only, md-only";
+            }
+        }
+        @else if $type == number {
+            $query: "all" !default;
+            @if $min != 0 and $max != 0 {
+                $query: "(min-width: #{$min}px) and (max-width: #{$max}px)";
+            }
+            @else if $min != 0 and $max == 0 {
+                $query: "(min-width: #{$min}px)";
+            }
+            @else if $min == 0 and $max != 0 {
+                $query: "(max-width: #{$max}px)";
+            }
+            @media #{$query} {
+                @content;
+            }
+        }
+    }
+
+    /**
+     * subsection: Mixins Hover (Not for mobile)
+     * ----------------------------------------
+     *
+     * how to use:
+     * @include hover() {
+     *      opacity: .5;
+     * }
+     */
+
+    @mixin hover {
+        /*
+         * https://developer.mozilla.org/en-US/docs/Web/CSS/@media/pointer
+         * coarse: The primary input mechanism includes a pointing device of limited accuracy.
+         */
+        @media not all and (pointer: coarse) {
+            &:hover {
+                @content;
+            }
+        }
+    }

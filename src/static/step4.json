@@ -1,0 +1,78 @@
+{
+  "title": "What best describes what you are struggling with?",
+  "subtitle": "Choose at least one option.",
+  "fields": [
+    {
+      "question": "emotional crisis"
+    },
+    {
+      "question": "abortion"
+    },
+    {
+      "question": "family problems"
+    },
+    {
+      "question": "aggression"
+    },
+    {
+      "question": "mood problems"
+    },
+    {
+      "question": "anorexia"
+    },
+    {
+      "question": "anxiety difficulties"
+    },
+    {
+      "question": "panic attacks"
+    },
+    {
+      "question": "dificulties in relationships"
+    },
+    {
+      "question": "self-agression"
+    },
+    {
+      "question": "professional difficulties"
+    },
+    {
+      "question": "bulimia"
+    },
+    {
+      "question": "addiction"
+    },
+    {
+      "question": "affective disease"
+    },
+    {
+      "question": "related to the body"
+    },
+    {
+      "question": "bipolar"
+    },
+    {
+      "question": "sex life"
+    },
+    {
+      "question": "depression"
+    },
+    {
+      "question": "phobia"
+    },
+    {
+      "question": "dysthymia"
+    },
+    {
+      "question": "social phobia"
+    },
+    {
+      "question": "violence"
+    },
+    {
+      "question": "mobbing"
+    },
+    {
+      "question": "schizophrenia"
+    }
+  ]
+}

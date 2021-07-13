@@ -1,0 +1,9 @@
+.tag{
+  display: inline-block;
+  position: relative;
+  @include font(500,13px,28px);
+  padding: 0 25px;
+  border-radius:28px;
+  background:#EDF1F2;
+  margin: 5px;
+}

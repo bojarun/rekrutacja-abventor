@@ -1,0 +1,85 @@
+.modal{
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  max-width: 680px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    .box > .button--primary{
+      padding: 0 20px;
+    }
+  }
+
+  .close{
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 15px;
+    right: 15px;
+    background: url(path-to-assets("../images/icon-close.svg")) 50% 50% / 14px no-repeat;
+    cursor: pointer;
+  }
+
+  .group{
+    display: block;
+    position: relative;
+    text-align: left;
+
+    min-height: 50px;
+    margin-bottom: 30px;
+
+    p{
+      display: block;
+      position: relative;
+      span{
+        display: block;
+        position: absolute;
+        left:170px;
+        top: 0;
+      }
+    }
+    small{
+      display: block;
+      position: relative;
+      margin-left: 9px;
+    }
+
+    .button{
+      display: block;
+      position: absolute;
+      text-transform: none;
+      top: 0;
+      right: 0;
+      margin: 0;
+
+      padding: 0 30px;
+      width: 200px;
+      line-height: 40px;
+    }
+
+    @media (max-width: 768px) {
+      min-height: inherit;
+      max-width: 280px;
+      margin: 0 auto;
+
+      p span{
+        display: inline-block;
+        position: relative;
+        margin-left: 5px;
+        left:inherit;
+      }
+
+
+      .button{
+        position: relative;
+        top: inherit;
+        right: inherit;
+        margin: 20px auto;
+      }
+    }
+  }
+}

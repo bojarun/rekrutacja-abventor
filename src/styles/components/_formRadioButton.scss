@@ -1,0 +1,55 @@
+.formRadioButton{
+  display: block;
+  position: relative;
+  padding: 10px 5px;
+  border-bottom: solid 1px #CCD6DB;
+
+  &:last-child{
+    border-bottom: none;
+  }
+
+  input{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+
+    &:checked + label:before{
+      border:solid 2px #FBB04B;
+    }
+    &:checked + label:after{
+      display: block;
+      position: absolute;
+      content: '';
+      right: 2px;
+      top: 7px;
+      width: 14px;
+      height:14px;
+      background: #FBB04B;
+      border-radius: 4px;
+    }
+  }
+
+  label{
+    display: block;
+    position: relative;
+    text-align: left;
+    @include font(600,16px,28px);
+
+    &:before{
+      display: block;
+      position: absolute;
+      content: "";
+      width: 28px;
+      height:28px;
+      right:-5px;
+      top:0;
+      border-radius: 4px;
+      border:solid 2px #30B3C7;
+    }
+  }
+}

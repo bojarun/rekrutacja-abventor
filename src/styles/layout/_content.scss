@@ -1,0 +1,14 @@
+.container{
+    @include        b-rel();
+    @include        clearfix();
+    max-width:      $container-width;
+    padding:        0 $container-padding;
+    margin:         0 auto;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    @include clearfix();
+}

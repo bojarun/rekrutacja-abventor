@@ -1,0 +1,68 @@
+.formCheckBox{
+  display: block;
+  position: relative;
+  padding: 10px 5px;
+  border-bottom: solid 1px #CCD6DB;
+  width: 40%;
+
+  @media (max-width: 980px) {
+    width: 100%;
+    margin-right:0 !important;
+    &:nth-last-child(2){
+      border-bottom: solid 1px #CCD6DB !important;
+    }
+  }
+
+  &:nth-child(odd){
+    margin-right:20%;
+  }
+
+  &:last-child, &:nth-last-child(2){
+    border-bottom: none;
+  }
+
+  input{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+
+    &:checked + label:before{
+      border:solid 2px #FBB04B;
+    }
+    &:checked + label:after{
+      display: block;
+      position: absolute;
+      content: '\2713';
+      color: #FBB04B;
+      right: 2px;
+      top: 1px;
+      width: 14px;
+      height:14px;
+      border-radius: 4px;
+    }
+  }
+
+  label{
+    display: block;
+    position: relative;
+    text-align: left;
+    @include font(600,16px,28px);
+
+    &:before{
+      display: block;
+      position: absolute;
+      content: "";
+      width: 28px;
+      height:28px;
+      right:-5px;
+      top:0;
+      border-radius: 4px;
+      border:solid 2px #30B3C7;
+    }
+  }
+}

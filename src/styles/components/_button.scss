@@ -1,0 +1,17 @@
+.button{
+  display: inline-block;
+  position: relative;
+  padding:0 50px;
+  text-align: center;
+  @include font(400,14px,50px);
+  text-transform: uppercase;
+  margin:20px 10px;
+  color:white;
+  cursor: pointer;
+  &--primary{
+    background: #30B3C7;
+  }
+  &--secondary{
+    background: #32576E;
+  }
+}
